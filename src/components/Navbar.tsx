@@ -47,7 +47,6 @@ export default function Navbar(){
                         
                         
                         <ul className="grid grid-flow-row gap-1">
-                            <li className=" border  rounded-lg flex h-12 border-dashed border-warmmain"><a className="w-full  px-2 py-3" href="#">Top</a></li>
                             <li className=" border  rounded-lg flex h-12 border-dashed border-warmmain"><a className="w-full  px-2 py-3" href="#skills">Skills</a></li>
                             <li className=" border  rounded-lg flex h-12 border-dashed border-warmmain"><a className="w-full  px-2 py-3" href="#projects">Projects</a></li>
                             <li className=" border  rounded-lg flex h-12 border-dashed border-warmmain"><a className="w-full  px-2 py-3" href="#contact">Contact Me</a></li>

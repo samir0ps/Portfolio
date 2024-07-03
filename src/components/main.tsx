@@ -23,7 +23,7 @@ export default function Main(){
     const headerSplitted = SplitString(header)
     const contentSplitted= SplitString(content)
     return (
-        <main id="main" className="w-full lg:pt-0  lg:pb-0 ">
+        <main id="main" className="w-full lg:pt-0  relative lg:pb-0 ">
             <div 
                     
                     className="h-screen  relative w-full lg:pt-0 pt-16 flex lg:flex-row flex-col items-center px-5 justify-center gap-10 main-container " style={{backgroundImage:`url(${BackgroundImage})` }}>
