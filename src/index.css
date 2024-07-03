@@ -33,7 +33,6 @@
 }
 html{
     scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
 }
 .form-image{
     background-repeat: no-repeat;
