@@ -56,8 +56,8 @@ export const Skills = () => {
     navigate({to :path})
   }
   return (
-    <div ref={useRef(null)} id="skills" style={{ backgroundImage: `url(${City})`  }} className="min-h-screen main-container w-full px-5 flex justify-center flex-col gap-3 overflow-x-hidden overflow-y-hidden item border-b border-dashed border-light/10 items-center p-auto">
-      <h1 className="text-sky-700 backdrop-blur-sm font-bold text-5xl">Skills</h1>
+    <div ref={useRef(null)} id="skills" style={{ backgroundImage: `url(${City})`  }} className="min-h-screen main-container w-full px-5 flex justify-center flex-col gap-5 overflow-x-hidden overflow-y-hidden item border-b border-dashed border-light/10 items-center p-auto">
+      <h1 className="text-light backdrop-blur-sm font-bold text-5xl">Skills</h1>
       <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 md:w-auto w-full sm:grid-cols-2 gap-5">
         {skills.map((Skill, i) => (
           <Tilt  key={i} options={defaultOptions} className="sm:h-52 h-32 w-full cursor-pointer flex shadow-md border border-light border-dashed rounded-3xl bg-warmmain/30 backdrop-blur-sm sm:w-52">

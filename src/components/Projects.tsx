@@ -7,9 +7,9 @@ import Blogs from "../assets/Capture.png"
 import Portfolio from "../assets/portfolio.png"
 export const Projects = ()=>{
     return (
-        <div id='projects' className="w-full lg:min-h-screen min-h-screen pb-2">
+        <div id='projects' className="w-full lg:min-h-screen pt-5 min-h-screen pb-5">
              <h1 className="text-5xl w-max mx-auto text-light">Projects</h1>
-             <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 w-full px-5 gap-3 mt-3">
+             <div className="grid mt-5 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 w-full px-5 gap-3 ">
                 <div className="h-[50vh] border-warmmain border p-4 grid grid-flow rounded-xl  bg-warmmain/10 w-full overflow-hidden">
                     <div className="overflow-hidden">
                         <Image src={EcommerceNext} loading="lazy" width={416} height={208} className='rounded-xl hover:scale-110 transition-all duration-150  sm:h-full max-h-52 object-cover w-full' alt='ecommerce image'/>

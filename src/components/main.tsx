@@ -1,4 +1,4 @@
-import { Palm } from "./main_subcombonents/palm";
+import { Computer } from "./main_subcombonents/Computer";
 import BackgroundImage from "../assets/bg-image.png"
 import {AnimatePresence, motion} from "framer-motion"
 
@@ -35,11 +35,9 @@ export default function Main(){
     return (
         <main id="main" className="w-full lg:pt-0  relative lg:pb-0 ">
             <div className="h-screen  relative w-full lg:pt-0 pt-16 flex lg:flex-row flex-col items-center px-5 justify-center gap-10 main-container " style={{backgroundImage:`url(${BackgroundImage})` }}>
-                <Palm/>
-                <div className="lg:h-3/4 lg:w-1 sm:w-3/4 w-[90%] h-2  bg-warmmain lg:flex hidden items-center relative justify-center">
-                    <div className="rounded-full w-5 h-5 bg-darkmain absolute border-2 border-warmmain">
-
-                    </div>
+                <Computer/>
+                <div className="lg:h-3/4 animate-pulse lg:w-1 sm:w-3/4 w-[90%] h-2  bg-sky-300 brightness-[1.5] lg:flex hidden items-center relative justify-center">
+                    
                 </div>
                 <div className="lg:flex-1 sm:w-3/4 w-[90%] md:text-lg text-sm">
                     <motion.h3 initial='hidden' whileInView="reveal" transition={{staggerChildren:.02}} className="lg:text-3xl md:text-2xl capitalize text-lg  font-bold text-lightmain">{headerSplitted.map((h,i)=>(
