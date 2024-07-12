@@ -17,9 +17,9 @@ export const Skills = () => {
   const defaultOptions = {
     reverse: false,
     max: 35,
-    perspective: 1000,
+    perspective: 500,
     scale: 1.1,
-    speed: 1000,
+    speed: 500,
     transition: true,
     axis: null,
     reset: true,
@@ -56,11 +56,11 @@ export const Skills = () => {
     navigate({to :path})
   }
   return (
-    <div ref={useRef(null)} style={{ backgroundImage: `url(${City})` }} className="min-h-screen w-full px-5 flex justify-center flex-col gap-3 overflow-x-hidden overflow-y-hidden item border-b border-dashed border-light/10 items-center p-auto">
+    <div ref={useRef(null)} id="skills" style={{ backgroundImage: `url(${City})`  }} className="min-h-screen main-container w-full px-5 flex justify-center flex-col gap-3 overflow-x-hidden overflow-y-hidden item border-b border-dashed border-light/10 items-center p-auto">
       <h1 className="text-sky-700 backdrop-blur-sm font-bold text-5xl">Skills</h1>
-      <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 sm:grid-cols-2 gap-5">
+      <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 md:w-auto w-full sm:grid-cols-2 gap-5">
         {skills.map((Skill, i) => (
-          <Tilt  key={i} options={defaultOptions} className="h-52 cursor-pointer flex shadow-md border border-light border-dashed rounded-3xl bg-warmmain/30 backdrop-blur-sm w-52">
+          <Tilt  key={i} options={defaultOptions} className="sm:h-52 h-32 w-full cursor-pointer flex shadow-md border border-light border-dashed rounded-3xl bg-warmmain/30 backdrop-blur-sm sm:w-52">
             <div onClick={()=>{onClickHandle(Skill.docs)}} className="w-full h-full flex items-center flex-col justify-center" ref={refs[i]}>
               <Skill.element />
               <h3 className="text-xl text-light mx-auto w-max">{Skill.label}</h3>

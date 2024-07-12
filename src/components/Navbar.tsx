@@ -48,9 +48,12 @@ export default function Navbar(){
                         
                         
                         <ul className="grid grid-flow-row gap-1 px-2">
-                            <li className=" border  rounded-lg flex h-12 border-dashed border-warmmain"><a className="w-full  px-2 py-3" href="#skills">Skills</a></li>
-                            <li className=" border  rounded-lg flex h-12 border-dashed border-warmmain"><a className="w-full  px-2 py-3" href="#projects">Projects</a></li>
-                            <li className=" border  rounded-lg flex h-12 border-dashed border-warmmain"><a className="w-full  px-2 py-3" href="#contact">Contact Me</a></li>
+                            <li className=" border  rounded-lg flex h-12 border-dashed border-warmmain"><Link to="/portfolio" className="w-full h-full px-2 py-3" hash="#skills" onClick={()=>{setOpenMenu(false)}} >Skills</Link></li>
+                            <li className=" border  rounded-lg flex h-12 border-dashed border-warmmain"><Link to="/portfolio" className="w-full h-full px-2 py-3" hash="#projects" onClick={()=>{setOpenMenu(false)}} >Projects</Link></li>
+                            <li className=" border  rounded-lg flex h-12 border-dashed border-warmmain">                            <Link to='/portfolio/about' onClick={()=>{setOpenMenu(false)}} className="w-full h-full  flex items-center justify-start px-2">About</Link>
+                            </li>
+                            <li className=" border  rounded-lg flex h-12 border-dashed border-warmmain"><Link to="/portfolio"  className="w-full h-full px-2 py-3" hash="#contact" onClick={()=>{setOpenMenu(false)}} >Contact Me</Link></li>
+                            
                         </ul>
                     </motion.div>
                 }
