@@ -1,12 +1,13 @@
 import { Dispatch, FormEvent, SetStateAction, useEffect, useRef, useState } from "react";
 import Laptop from "../assets/Laptop.jpg"
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css';
+
 import emailjs from '@emailjs/browser';
 import { IoMdCheckmarkCircle } from "react-icons/io";
 import {AnimatePresence, motion} from "framer-motion"
+import { Image } from "@unpic/react";
 
 const SuccessMessage = ({open , setOpen } : {open:boolean , setOpen:Dispatch<SetStateAction<boolean>>})=>{
+
     useEffect(()=>{
         if(open){
             setTimeout(()=>{
@@ -91,10 +92,10 @@ export default function Contact(){
                     <textarea ref={user_message} name="message" placeholder="example@example.com" className="lg:w-3/4 w-full h-32  bg-warmmain border-light mt-1 border resize-x-none rounded-xl p-3" />
                     <br />
                     <br />
-                        <button disabled={submitting} type="submit" className="lg:w-3/4 w-full py-2 disabled:opacity-70 bg-light hover:bg-lightmain hover:text-light effect text-darkmain rounded-lg ">{submitting? "Processing.." :"Submit"}</button>
+                        <button disabled={submitting} type="submit" className="lg:w-3/4 w-full py-2 disabled:opacity-70 bg-light hover:bg-slate-300 effect text-darkmain rounded-lg ">{submitting? "Processing.." :"Submit"}</button>
                 </form>
             </div>
-            <LazyLoadImage src={Laptop} className="w-auto lg:flex hidden max-h-screen object-contain"/>
+            <Image width={416} height={1080} loading="lazy" background="blur" src={Laptop} className="w-auto lg:flex hidden max-h-screen object-contain"/>
             <SuccessMessage open={open} setOpen={setOpen}/>
         </div>
     )

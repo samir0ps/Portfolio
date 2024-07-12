@@ -38,3 +38,22 @@ html{
     background-repeat: no-repeat;
     background-size: contain;
 }
+.react-logo , .type-logo ,.tailwind-logo{
+    filter: drop-shadow(8px 20px 28px #034eb0);}
+
+.next-logo{
+    filter: drop-shadow(8px 20px 28px #000000);
+    
+}
+.js-logo{
+    filter: drop-shadow(8px 20px 28px #F7C04A);
+    
+}
+.node-logo{
+    filter: drop-shadow(8px 20px 28px #539165);
+
+}
+.svelte-logo , .html-logo{
+    filter: drop-shadow(8px 20px 28px #FC8621);
+
+}
