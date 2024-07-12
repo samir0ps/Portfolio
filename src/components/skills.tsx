@@ -51,7 +51,7 @@ export const Skills = () => {
       }
     });
   }, [refs, skills]);
-  const navigate = useNavigate({from:'/portfolio'})
+  const navigate = useNavigate({from:'/'})
   const onClickHandle = (path:string)=>{
     navigate({to :path})
   }

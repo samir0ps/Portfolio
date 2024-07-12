@@ -1,8 +1,8 @@
 import { createLazyFileRoute } from '@tanstack/react-router'
-import { Tailwind } from '../../../components/skills/skillsLogo/tailwind'
+import { Tailwind } from '../../components/skills/skillsLogo/tailwind'
 import { FaExternalLinkAlt } from 'react-icons/fa'
 
-export const Route = createLazyFileRoute('/portfolio/skills/tailwind')({
+export const Route = createLazyFileRoute('/skills/tailwind')({
   component: Tailwind_css
 })
 const handleOnClick = ()=>{

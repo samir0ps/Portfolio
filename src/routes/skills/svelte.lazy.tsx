@@ -1,8 +1,8 @@
 import { createLazyFileRoute } from '@tanstack/react-router'
 import { FaExternalLinkAlt } from 'react-icons/fa'
-import { Svelte } from '../../../components/skills/skillsLogo/svelte'
+import { Svelte } from '../../components/skills/skillsLogo/svelte'
 
-export const Route = createLazyFileRoute('/portfolio/skills/svelte')({
+export const Route = createLazyFileRoute('/skills/svelte')({
   component: Svelte_page
 })
 const handleOnClick = ()=>{

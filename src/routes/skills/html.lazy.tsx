@@ -1,8 +1,8 @@
 import { createLazyFileRoute } from '@tanstack/react-router'
 import { FaExternalLinkAlt } from 'react-icons/fa'
-import { Html } from '../../../components/skills/skillsLogo/html'
+import { Html } from '../../components/skills/skillsLogo/html'
 
-export const Route = createLazyFileRoute('/portfolio/skills/html')({
+export const Route = createLazyFileRoute('/skills/html')({
   component: Html_page
 })
 const handleOnClick = ()=>{

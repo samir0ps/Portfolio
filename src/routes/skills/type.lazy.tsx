@@ -1,8 +1,8 @@
 import { createLazyFileRoute } from '@tanstack/react-router'
-import { Typescript } from '../../../components/skills/skillsLogo/typescript'
+import { Typescript } from '../../components/skills/skillsLogo/typescript'
 import { FaExternalLinkAlt } from 'react-icons/fa'
 
-export const Route = createLazyFileRoute('/portfolio/skills/type')({
+export const Route = createLazyFileRoute('/skills/type')({
   component: TypePage
 })
 const handleOnClick = ()=>{

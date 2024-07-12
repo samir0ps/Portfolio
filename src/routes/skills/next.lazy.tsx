@@ -1,8 +1,8 @@
 import { createLazyFileRoute } from '@tanstack/react-router'
 import { FaExternalLinkAlt } from 'react-icons/fa'
-import { Next } from '../../../components/skills/skillsLogo/Next'
+import { Next } from '../../components/skills/skillsLogo/Next'
 
-export const Route = createLazyFileRoute('/portfolio/skills/next')({
+export const Route = createLazyFileRoute('/skills/next')({
   component: Next_page
 })
 

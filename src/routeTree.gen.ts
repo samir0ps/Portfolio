@@ -16,176 +16,143 @@ import { Route as rootRoute } from './routes/__root'
 
 // Create Virtual Routes
 
-const PortfolioIndexLazyImport = createFileRoute('/portfolio/')()
-const PortfolioAboutIndexLazyImport = createFileRoute('/portfolio/about/')()
-const PortfolioSkillsTypeLazyImport = createFileRoute(
-  '/portfolio/skills/type',
-)()
-const PortfolioSkillsTailwindLazyImport = createFileRoute(
-  '/portfolio/skills/tailwind',
-)()
-const PortfolioSkillsSvelteLazyImport = createFileRoute(
-  '/portfolio/skills/svelte',
-)()
-const PortfolioSkillsReactLazyImport = createFileRoute(
-  '/portfolio/skills/react',
-)()
-const PortfolioSkillsNodeLazyImport = createFileRoute(
-  '/portfolio/skills/node',
-)()
-const PortfolioSkillsNextLazyImport = createFileRoute(
-  '/portfolio/skills/next',
-)()
-const PortfolioSkillsJsLazyImport = createFileRoute('/portfolio/skills/js')()
-const PortfolioSkillsHtmlLazyImport = createFileRoute(
-  '/portfolio/skills/html',
-)()
+const AboutLazyImport = createFileRoute('/about')()
+const IndexLazyImport = createFileRoute('/')()
+const SkillsTypeLazyImport = createFileRoute('/skills/type')()
+const SkillsTailwindLazyImport = createFileRoute('/skills/tailwind')()
+const SkillsSvelteLazyImport = createFileRoute('/skills/svelte')()
+const SkillsReactLazyImport = createFileRoute('/skills/react')()
+const SkillsNodeLazyImport = createFileRoute('/skills/node')()
+const SkillsNextLazyImport = createFileRoute('/skills/next')()
+const SkillsJsLazyImport = createFileRoute('/skills/js')()
+const SkillsHtmlLazyImport = createFileRoute('/skills/html')()
 
 // Create/Update Routes
 
-const PortfolioIndexLazyRoute = PortfolioIndexLazyImport.update({
-  path: '/portfolio/',
+const AboutLazyRoute = AboutLazyImport.update({
+  path: '/about',
+  getParentRoute: () => rootRoute,
+} as any).lazy(() => import('./routes/about.lazy').then((d) => d.Route))
+
+const IndexLazyRoute = IndexLazyImport.update({
+  path: '/',
+  getParentRoute: () => rootRoute,
+} as any).lazy(() => import('./routes/index.lazy').then((d) => d.Route))
+
+const SkillsTypeLazyRoute = SkillsTypeLazyImport.update({
+  path: '/skills/type',
+  getParentRoute: () => rootRoute,
+} as any).lazy(() => import('./routes/skills/type.lazy').then((d) => d.Route))
+
+const SkillsTailwindLazyRoute = SkillsTailwindLazyImport.update({
+  path: '/skills/tailwind',
   getParentRoute: () => rootRoute,
 } as any).lazy(() =>
-  import('./routes/portfolio/index.lazy').then((d) => d.Route),
+  import('./routes/skills/tailwind.lazy').then((d) => d.Route),
 )
 
-const PortfolioAboutIndexLazyRoute = PortfolioAboutIndexLazyImport.update({
-  path: '/portfolio/about/',
+const SkillsSvelteLazyRoute = SkillsSvelteLazyImport.update({
+  path: '/skills/svelte',
   getParentRoute: () => rootRoute,
-} as any).lazy(() =>
-  import('./routes/portfolio/about/index.lazy').then((d) => d.Route),
-)
+} as any).lazy(() => import('./routes/skills/svelte.lazy').then((d) => d.Route))
 
-const PortfolioSkillsTypeLazyRoute = PortfolioSkillsTypeLazyImport.update({
-  path: '/portfolio/skills/type',
+const SkillsReactLazyRoute = SkillsReactLazyImport.update({
+  path: '/skills/react',
   getParentRoute: () => rootRoute,
-} as any).lazy(() =>
-  import('./routes/portfolio/skills/type.lazy').then((d) => d.Route),
-)
+} as any).lazy(() => import('./routes/skills/react.lazy').then((d) => d.Route))
 
-const PortfolioSkillsTailwindLazyRoute =
-  PortfolioSkillsTailwindLazyImport.update({
-    path: '/portfolio/skills/tailwind',
-    getParentRoute: () => rootRoute,
-  } as any).lazy(() =>
-    import('./routes/portfolio/skills/tailwind.lazy').then((d) => d.Route),
-  )
-
-const PortfolioSkillsSvelteLazyRoute = PortfolioSkillsSvelteLazyImport.update({
-  path: '/portfolio/skills/svelte',
+const SkillsNodeLazyRoute = SkillsNodeLazyImport.update({
+  path: '/skills/node',
   getParentRoute: () => rootRoute,
-} as any).lazy(() =>
-  import('./routes/portfolio/skills/svelte.lazy').then((d) => d.Route),
-)
+} as any).lazy(() => import('./routes/skills/node.lazy').then((d) => d.Route))
 
-const PortfolioSkillsReactLazyRoute = PortfolioSkillsReactLazyImport.update({
-  path: '/portfolio/skills/react',
+const SkillsNextLazyRoute = SkillsNextLazyImport.update({
+  path: '/skills/next',
   getParentRoute: () => rootRoute,
-} as any).lazy(() =>
-  import('./routes/portfolio/skills/react.lazy').then((d) => d.Route),
-)
+} as any).lazy(() => import('./routes/skills/next.lazy').then((d) => d.Route))
 
-const PortfolioSkillsNodeLazyRoute = PortfolioSkillsNodeLazyImport.update({
-  path: '/portfolio/skills/node',
+const SkillsJsLazyRoute = SkillsJsLazyImport.update({
+  path: '/skills/js',
   getParentRoute: () => rootRoute,
-} as any).lazy(() =>
-  import('./routes/portfolio/skills/node.lazy').then((d) => d.Route),
-)
+} as any).lazy(() => import('./routes/skills/js.lazy').then((d) => d.Route))
 
-const PortfolioSkillsNextLazyRoute = PortfolioSkillsNextLazyImport.update({
-  path: '/portfolio/skills/next',
+const SkillsHtmlLazyRoute = SkillsHtmlLazyImport.update({
+  path: '/skills/html',
   getParentRoute: () => rootRoute,
-} as any).lazy(() =>
-  import('./routes/portfolio/skills/next.lazy').then((d) => d.Route),
-)
-
-const PortfolioSkillsJsLazyRoute = PortfolioSkillsJsLazyImport.update({
-  path: '/portfolio/skills/js',
-  getParentRoute: () => rootRoute,
-} as any).lazy(() =>
-  import('./routes/portfolio/skills/js.lazy').then((d) => d.Route),
-)
-
-const PortfolioSkillsHtmlLazyRoute = PortfolioSkillsHtmlLazyImport.update({
-  path: '/portfolio/skills/html',
-  getParentRoute: () => rootRoute,
-} as any).lazy(() =>
-  import('./routes/portfolio/skills/html.lazy').then((d) => d.Route),
-)
+} as any).lazy(() => import('./routes/skills/html.lazy').then((d) => d.Route))
 
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/portfolio/': {
-      id: '/portfolio/'
-      path: '/portfolio'
-      fullPath: '/portfolio'
-      preLoaderRoute: typeof PortfolioIndexLazyImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexLazyImport
       parentRoute: typeof rootRoute
     }
-    '/portfolio/skills/html': {
-      id: '/portfolio/skills/html'
-      path: '/portfolio/skills/html'
-      fullPath: '/portfolio/skills/html'
-      preLoaderRoute: typeof PortfolioSkillsHtmlLazyImport
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutLazyImport
       parentRoute: typeof rootRoute
     }
-    '/portfolio/skills/js': {
-      id: '/portfolio/skills/js'
-      path: '/portfolio/skills/js'
-      fullPath: '/portfolio/skills/js'
-      preLoaderRoute: typeof PortfolioSkillsJsLazyImport
+    '/skills/html': {
+      id: '/skills/html'
+      path: '/skills/html'
+      fullPath: '/skills/html'
+      preLoaderRoute: typeof SkillsHtmlLazyImport
       parentRoute: typeof rootRoute
     }
-    '/portfolio/skills/next': {
-      id: '/portfolio/skills/next'
-      path: '/portfolio/skills/next'
-      fullPath: '/portfolio/skills/next'
-      preLoaderRoute: typeof PortfolioSkillsNextLazyImport
+    '/skills/js': {
+      id: '/skills/js'
+      path: '/skills/js'
+      fullPath: '/skills/js'
+      preLoaderRoute: typeof SkillsJsLazyImport
       parentRoute: typeof rootRoute
     }
-    '/portfolio/skills/node': {
-      id: '/portfolio/skills/node'
-      path: '/portfolio/skills/node'
-      fullPath: '/portfolio/skills/node'
-      preLoaderRoute: typeof PortfolioSkillsNodeLazyImport
+    '/skills/next': {
+      id: '/skills/next'
+      path: '/skills/next'
+      fullPath: '/skills/next'
+      preLoaderRoute: typeof SkillsNextLazyImport
       parentRoute: typeof rootRoute
     }
-    '/portfolio/skills/react': {
-      id: '/portfolio/skills/react'
-      path: '/portfolio/skills/react'
-      fullPath: '/portfolio/skills/react'
-      preLoaderRoute: typeof PortfolioSkillsReactLazyImport
+    '/skills/node': {
+      id: '/skills/node'
+      path: '/skills/node'
+      fullPath: '/skills/node'
+      preLoaderRoute: typeof SkillsNodeLazyImport
       parentRoute: typeof rootRoute
     }
-    '/portfolio/skills/svelte': {
-      id: '/portfolio/skills/svelte'
-      path: '/portfolio/skills/svelte'
-      fullPath: '/portfolio/skills/svelte'
-      preLoaderRoute: typeof PortfolioSkillsSvelteLazyImport
+    '/skills/react': {
+      id: '/skills/react'
+      path: '/skills/react'
+      fullPath: '/skills/react'
+      preLoaderRoute: typeof SkillsReactLazyImport
       parentRoute: typeof rootRoute
     }
-    '/portfolio/skills/tailwind': {
-      id: '/portfolio/skills/tailwind'
-      path: '/portfolio/skills/tailwind'
-      fullPath: '/portfolio/skills/tailwind'
-      preLoaderRoute: typeof PortfolioSkillsTailwindLazyImport
+    '/skills/svelte': {
+      id: '/skills/svelte'
+      path: '/skills/svelte'
+      fullPath: '/skills/svelte'
+      preLoaderRoute: typeof SkillsSvelteLazyImport
       parentRoute: typeof rootRoute
     }
-    '/portfolio/skills/type': {
-      id: '/portfolio/skills/type'
-      path: '/portfolio/skills/type'
-      fullPath: '/portfolio/skills/type'
-      preLoaderRoute: typeof PortfolioSkillsTypeLazyImport
+    '/skills/tailwind': {
+      id: '/skills/tailwind'
+      path: '/skills/tailwind'
+      fullPath: '/skills/tailwind'
+      preLoaderRoute: typeof SkillsTailwindLazyImport
       parentRoute: typeof rootRoute
     }
-    '/portfolio/about/': {
-      id: '/portfolio/about/'
-      path: '/portfolio/about'
-      fullPath: '/portfolio/about'
-      preLoaderRoute: typeof PortfolioAboutIndexLazyImport
+    '/skills/type': {
+      id: '/skills/type'
+      path: '/skills/type'
+      fullPath: '/skills/type'
+      preLoaderRoute: typeof SkillsTypeLazyImport
       parentRoute: typeof rootRoute
     }
   }
@@ -194,16 +161,16 @@ declare module '@tanstack/react-router' {
 // Create and export the route tree
 
 export const routeTree = rootRoute.addChildren({
-  PortfolioIndexLazyRoute,
-  PortfolioSkillsHtmlLazyRoute,
-  PortfolioSkillsJsLazyRoute,
-  PortfolioSkillsNextLazyRoute,
-  PortfolioSkillsNodeLazyRoute,
-  PortfolioSkillsReactLazyRoute,
-  PortfolioSkillsSvelteLazyRoute,
-  PortfolioSkillsTailwindLazyRoute,
-  PortfolioSkillsTypeLazyRoute,
-  PortfolioAboutIndexLazyRoute,
+  IndexLazyRoute,
+  AboutLazyRoute,
+  SkillsHtmlLazyRoute,
+  SkillsJsLazyRoute,
+  SkillsNextLazyRoute,
+  SkillsNodeLazyRoute,
+  SkillsReactLazyRoute,
+  SkillsSvelteLazyRoute,
+  SkillsTailwindLazyRoute,
+  SkillsTypeLazyRoute,
 })
 
 /* prettier-ignore-end */
@@ -214,47 +181,47 @@ export const routeTree = rootRoute.addChildren({
     "__root__": {
       "filePath": "__root.tsx",
       "children": [
-        "/portfolio/",
-        "/portfolio/skills/html",
-        "/portfolio/skills/js",
-        "/portfolio/skills/next",
-        "/portfolio/skills/node",
-        "/portfolio/skills/react",
-        "/portfolio/skills/svelte",
-        "/portfolio/skills/tailwind",
-        "/portfolio/skills/type",
-        "/portfolio/about/"
+        "/",
+        "/about",
+        "/skills/html",
+        "/skills/js",
+        "/skills/next",
+        "/skills/node",
+        "/skills/react",
+        "/skills/svelte",
+        "/skills/tailwind",
+        "/skills/type"
       ]
     },
-    "/portfolio/": {
-      "filePath": "portfolio/index.lazy.tsx"
+    "/": {
+      "filePath": "index.lazy.tsx"
     },
-    "/portfolio/skills/html": {
-      "filePath": "portfolio/skills/html.lazy.tsx"
+    "/about": {
+      "filePath": "about.lazy.tsx"
     },
-    "/portfolio/skills/js": {
-      "filePath": "portfolio/skills/js.lazy.tsx"
+    "/skills/html": {
+      "filePath": "skills/html.lazy.tsx"
     },
-    "/portfolio/skills/next": {
-      "filePath": "portfolio/skills/next.lazy.tsx"
+    "/skills/js": {
+      "filePath": "skills/js.lazy.tsx"
     },
-    "/portfolio/skills/node": {
-      "filePath": "portfolio/skills/node.lazy.tsx"
+    "/skills/next": {
+      "filePath": "skills/next.lazy.tsx"
     },
-    "/portfolio/skills/react": {
-      "filePath": "portfolio/skills/react.lazy.tsx"
+    "/skills/node": {
+      "filePath": "skills/node.lazy.tsx"
     },
-    "/portfolio/skills/svelte": {
-      "filePath": "portfolio/skills/svelte.lazy.tsx"
+    "/skills/react": {
+      "filePath": "skills/react.lazy.tsx"
     },
-    "/portfolio/skills/tailwind": {
-      "filePath": "portfolio/skills/tailwind.lazy.tsx"
+    "/skills/svelte": {
+      "filePath": "skills/svelte.lazy.tsx"
     },
-    "/portfolio/skills/type": {
-      "filePath": "portfolio/skills/type.lazy.tsx"
+    "/skills/tailwind": {
+      "filePath": "skills/tailwind.lazy.tsx"
     },
-    "/portfolio/about/": {
-      "filePath": "portfolio/about/index.lazy.tsx"
+    "/skills/type": {
+      "filePath": "skills/type.lazy.tsx"
     }
   }
 }
