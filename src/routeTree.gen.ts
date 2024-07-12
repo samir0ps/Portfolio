@@ -54,7 +54,7 @@ const PortfolioAboutLazyRoute = PortfolioAboutLazyImport.update({
   path: '/portfolio/about',
   getParentRoute: () => rootRoute,
 } as any).lazy(() =>
-  import('./routes/portfolio/about.lazy').then((d) => d.Route),
+  import('./routes/portfolio/about/index.lazy').then((d) => d.Route),
 )
 
 const PortfolioSkillsTypeLazyRoute = PortfolioSkillsTypeLazyImport.update({
