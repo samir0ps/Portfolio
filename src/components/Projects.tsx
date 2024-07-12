@@ -1,6 +1,6 @@
 
-import EcommerceNext from "../../src/ecommerce_nextjs.png"
-import Ecommerce_Node from "../../src/ecommerce_node - Copy.png"
+import EcommerceNext from "../assets/ecommerce_nextjs.png"
+import Ecommerce_Node from "../assets/ecommerce_node - Copy.png"
 import { IoLogoGithub } from "react-icons/io";
 import { Image } from "@unpic/react";
 import Blogs from "../assets/Capture.png"

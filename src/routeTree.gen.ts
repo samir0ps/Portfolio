@@ -13,10 +13,10 @@ import { createFileRoute } from '@tanstack/react-router'
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
-import { Route as AboutImport } from './routes/about'
 
 // Create Virtual Routes
 
+const AboutLazyImport = createFileRoute('/about')()
 const IndexLazyImport = createFileRoute('/')()
 const SkillsTypeLazyImport = createFileRoute('/skills/type')()
 const SkillsTailwindLazyImport = createFileRoute('/skills/tailwind')()
@@ -29,7 +29,7 @@ const SkillsHtmlLazyImport = createFileRoute('/skills/html')()
 
 // Create/Update Routes
 
-const AboutRoute = AboutImport.update({
+const AboutLazyRoute = AboutLazyImport.update({
   path: '/about',
   getParentRoute: () => rootRoute,
 } as any).lazy(() => import('./routes/about.lazy').then((d) => d.Route))
@@ -96,7 +96,7 @@ declare module '@tanstack/react-router' {
       id: '/about'
       path: '/about'
       fullPath: '/about'
-      preLoaderRoute: typeof AboutImport
+      preLoaderRoute: typeof AboutLazyImport
       parentRoute: typeof rootRoute
     }
     '/skills/html': {
@@ -162,7 +162,7 @@ declare module '@tanstack/react-router' {
 
 export const routeTree = rootRoute.addChildren({
   IndexLazyRoute,
-  AboutRoute,
+  AboutLazyRoute,
   SkillsHtmlLazyRoute,
   SkillsJsLazyRoute,
   SkillsNextLazyRoute,
@@ -197,7 +197,7 @@ export const routeTree = rootRoute.addChildren({
       "filePath": "index.lazy.tsx"
     },
     "/about": {
-      "filePath": "about.tsx"
+      "filePath": "about.lazy.tsx"
     },
     "/skills/html": {
       "filePath": "skills/html.lazy.tsx"
