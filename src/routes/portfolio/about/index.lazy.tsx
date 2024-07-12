@@ -1,5 +1,5 @@
 import { createLazyFileRoute } from '@tanstack/react-router'
-import MyImage from "../../assets/mine.jpg"
+import MyImage from "../../../assets/mine.jpg"
 import { Image } from '@unpic/react'
 export const Route = createLazyFileRoute('/portfolio/about')({
   component: About , 
