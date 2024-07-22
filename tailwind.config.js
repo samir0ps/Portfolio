@@ -10,7 +10,7 @@ export default {
         Fustat : ["Fustat", 'sans-serif']
       },
       screens:{
-        xs:'350px'
+        xs:'550px'
       },
       colors:{
         darkmain : "#191825" , 

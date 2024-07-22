@@ -67,7 +67,7 @@ export default function Contact(){
       };
     
     return(
-        <div id="contact" className="w-full h-screen border-t flex border-dashed border-light/10">
+        <div id="contact" className="w-full border-b  h-screen border-t flex border-dashed border-light/10">
             <div className="flex-1 px-5 ">
                 <h1 className="text-5xl text-light mt-3">Contact Me👇</h1>
                 <form ref={formRef} onSubmit={sendEmail} className="mt-5">
@@ -95,7 +95,7 @@ export default function Contact(){
                         <button disabled={submitting} type="submit" className="lg:w-3/4 w-full py-2 disabled:opacity-70 bg-light hover:bg-slate-300 effect text-darkmain rounded-lg ">{submitting? "Processing.." :"Submit"}</button>
                 </form>
             </div>
-            <Image width={416} height={1080} loading="lazy" background="blur" src={Laptop} className="w-auto lg:flex hidden max-h-screen object-contain"/>
+            <Image width={416} height={1080} loading="lazy" background="blur" src={Laptop} className="w-auto border-l-2 border-lightmain lg:flex hidden max-h-screen object-contain"/>
             <SuccessMessage open={open} setOpen={setOpen}/>
         </div>
     )

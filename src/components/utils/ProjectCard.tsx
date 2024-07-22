@@ -24,7 +24,7 @@ export const Card = ({ project }: { project: any }) => {
     <motion.div
       ref={ref}
       style={{ scale: scaleProgress, opacity: opacityProgress }}
-      className="h-auto border-warmmain justify-between items-start border p-4 flex flex-col rounded-xl bg-warmmain/10 w-full overflow-hidden"
+      className="h-auto border-warmmain relative justify-between md:items-start gap-3 border p-4 flex lg:flex-row flex-col  rounded-xl bg-warmmain/10 w-full overflow-hidden"
     >
       <div className="overflow-hidden">
         <Image
@@ -32,18 +32,21 @@ export const Card = ({ project }: { project: any }) => {
           loading="lazy"
           width={416}
           height={208}
-          className="rounded-xl hover:scale-110 transition-all duration-150 sm:h-full max-h-52 object-cover w-full"
+          className="rounded-xl hover:scale-110 transition-all duration-150 sm:h-full  object-contain w-full"
           alt="ecommerce image"
         />
       </div>
-      <p className="text-lightmain text-2xl font-bold">{project.title}</p>
-      <p className="text-gray-300 flex-1 p-1 rounded-lg shadow-lg max-w-md">
-        {project.description}
-      </p>
+      <div className="w-auto flex-1">
+        <p className="text-lightmain text-lg md:text-2xl font-bold">{project.title}</p>
+        <p className="text-gray-300 md:text-md text-sm flex-1 p-1 rounded-lg  w-full">
+            {project.description}
+        </p>
+
+      </div>
       <a
         href={project.link}
         target="_blank"
-        className="bg-light w-full hover:bg-slate-300 effect flex items-center h-12 justify-center text-darkmain rounded-lg"
+        className="bg-light w-full md:w-max px-5 hover:bg-slate-300 effect flex items-center h-9 justify-center text-darkmain rounded-lg"
       >
         <IoLogoGithub />
         Git

@@ -56,7 +56,7 @@ export const Skills = () => {
         <div className=" flex flex-wrap  mt-3 md:grid-cols-3 grid-cols-2 md:w-auto w-full sm:grid-cols-2 gap-7 drop-shadow-md">
           {skills.map((Skill, i) => (
             
-              <div onClick={()=>{onClickHandle(Skill.docs)}} className="cursor-pointer flex items-center flex-col justify-center w-20 h-20" ref={refs[i]}>
+              <div key={i} onClick={()=>{onClickHandle(Skill.docs)}} className="cursor-pointer flex items-center flex-col justify-center w-20 h-20" ref={refs[i]}>
                 <Skill.element />
                 <p>{Skill.label}</p>
               </div>
