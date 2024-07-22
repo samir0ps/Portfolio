@@ -1,9 +1,10 @@
-import { Computer } from "./main_subcombonents/Computer";
+import Computer  from "../assets/me.jpg";
 import BackgroundImage from "../assets/bg-image.png"
 import {AnimatePresence, motion} from "framer-motion"
 
 import { SplitString } from "./utils/splitCharacters";
 import { useEffect, useState } from "react";
+import { Image } from "@unpic/react";
 export default function Main(){
     const [showScroll ,setShowScroll] = useState(true)
     const charVariants = {
@@ -33,13 +34,11 @@ export default function Main(){
     const headerSplitted = SplitString(header)
     const contentSplitted= SplitString(content)
     return (
-        <main id="main" className="w-full lg:pt-0  relative lg:pb-0 ">
-            <div className="h-screen  relative w-full lg:pt-0 pt-16 flex lg:flex-row flex-col items-center px-5 justify-center gap-10 main-container " style={{backgroundImage:`url(${BackgroundImage})` }}>
-                <Computer/>
-                <div className="lg:h-3/4 animate-pulse lg:w-1 sm:w-3/4 w-[90%] h-2  bg-sky-300 brightness-[1.5] lg:flex hidden items-center relative justify-center">
-                    
-                </div>
-                <div className="lg:flex-1 sm:w-3/4 w-[90%] md:text-lg text-sm">
+        <main id="main" className="w-full lg:pt-0 min-h-screen h-max relative lg:pb-0 ">
+            <div className="min-h-screen pb-5 relative w-full lg:pt-0 pt-16 flex lg:flex-row flex-col items-center px-5 justify-center gap-10 main-container " style={{backgroundImage:`url(${BackgroundImage})` }}>
+                <Image width={66*0.25*16} height={66*0.25*16} layout={"constrained"} src={Computer} alt="my image" className="rounded-3xl outline-2 outline-lightmain outline-offset-4 outline border-2 border-lightmain shadow-md object-contain  "/>
+
+                <div className=" sm:w-3/4 w-full bg-warmmain/30 p-4 rounded-xl  md:text-lg text-sm">
                     <motion.h3 initial='hidden' whileInView="reveal" transition={{staggerChildren:.02}} className="lg:text-3xl md:text-2xl capitalize text-lg  font-bold text-lightmain">{headerSplitted.map((h,i)=>(
                         <motion.span  transition={{duration:0.5}} key={i} variants={charVariants}>
                             {h}
