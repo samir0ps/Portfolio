@@ -67,29 +67,29 @@ export default function Contact(){
       };
     
     return(
-        <div id="contact" className="w-full border-b  h-screen border-t flex border-dashed border-light/10">
-            <div className="flex-1 px-5 ">
-                <h1 className="text-5xl text-light mt-3">Contact Me👇</h1>
-                <form ref={formRef} onSubmit={sendEmail} className="mt-5">
-                    <label  className="font-bold text-lg">
+        <div id="contact" className="w-full border-b xs:py-0 py-5 xs:h-screen min-h-screen border-t flex border-dashed border-light/10">
+            <div className="flex-1  px-5">
+                <h1 className="md:text-5xl sm:text-4xl text-3xl  text-light mt-3">Contact Me👇</h1>
+                <form ref={formRef} onSubmit={sendEmail} className="mt-5 px-5">
+                    <label  className="font-bold text-md sm:text-lg">
                         Name
                     </label>
                     <br />
-                    <input ref={user_name} name="user_name" type="text" placeholder="John,Mahmoud,Mohammed or etc.." className="lg:w-3/4 w-full bg-warmmain border-light mt-1 border h-12 rounded-xl pl-3" />
+                    <input ref={user_name} name="user_name" type="text" placeholder="John,Mahmoud,Mohammed or etc.." className="lg:w-3/4 w-full text-xs sm:text-sm bg-warmmain border-light mt-1 border h-12 rounded-xl pl-3" />
                     <br />
                     <br />
-                    <label  className="font-bold text-lg">
+                    <label  className="font-bold text-md sm:text-lg">
                         Email
                     </label>
                     <br />
-                    <input ref={user_email} name='user_email' type="text" placeholder="example@example.com" className="lg:w-3/4 w-full  bg-warmmain border-light mt-1 border h-12 rounded-xl pl-3" />
+                    <input ref={user_email} name='user_email' type="text" placeholder="example@example.com" className="lg:w-3/4 w-full text-xs sm:text-sm bg-warmmain border-light mt-1 border h-12 rounded-xl pl-3" />
                     <br />
                     <br />
-                    <label  className="font-bold text-lg mt-3">
+                    <label  className="font-bold text-md sm:text-lg mt-3">
                         Message
                     </label>
                     <br />
-                    <textarea ref={user_message} name="message" placeholder="example@example.com" className="lg:w-3/4 w-full h-32  bg-warmmain border-light mt-1 border resize-x-none rounded-xl p-3" />
+                    <textarea ref={user_message} name="message" placeholder="example@example.com" className="lg:w-3/4 w-full h-32 text-xs sm:text-sm bg-warmmain border-light mt-1 border resize-x-none rounded-xl p-3" />
                     <br />
                     <br />
                         <button disabled={submitting} type="submit" className="lg:w-3/4 w-full py-2 disabled:opacity-70 bg-light hover:bg-slate-300 effect text-darkmain rounded-lg ">{submitting? "Processing.." :"Submit"}</button>

@@ -24,7 +24,7 @@ export const Card = ({ project }: { project: any }) => {
     <motion.div
       ref={ref}
       style={{ scale: scaleProgress, opacity: opacityProgress }}
-      className="h-auto border-warmmain relative justify-between md:items-start gap-3 border p-4 flex lg:flex-row flex-col  rounded-xl bg-warmmain/10 w-full overflow-hidden"
+      className="h-auto border-warmmain relative justify-between xs:items-start gap-3 border p-4 flex lg:flex-row flex-col items-center rounded-xl bg-warmmain/10 w-full overflow-hidden"
     >
       <div className="overflow-hidden">
         <Image
@@ -37,8 +37,8 @@ export const Card = ({ project }: { project: any }) => {
         />
       </div>
       <div className="w-auto flex-1">
-        <p className="text-lightmain text-lg md:text-2xl font-bold">{project.title}</p>
-        <p className="text-gray-300 md:text-md text-sm flex-1 p-1 rounded-lg  w-full">
+        <p className="text-lightmain text-sm xs:text-lg md:text-2xl font-bold">{project.title}</p>
+        <p className="text-gray-300 md:text-md xs:text-sm text-xs  text-ellipsis overflow-hidden xs:line-clamp-none line-clamp-3 flex-1 p-1 rounded-lg  w-full">
             {project.description}
         </p>
 
