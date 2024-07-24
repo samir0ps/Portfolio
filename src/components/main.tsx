@@ -36,8 +36,7 @@ export default function Main(){
     return (
         <main id="main" className="w-full lg:pt-0 min-h-screen h-max relative lg:pb-0 ">
             <div className="min-h-screen pb-5 relative w-full lg:pt-0 pt-16 flex lg:flex-row flex-col items-center px-5 justify-center gap-10 main-container " style={{backgroundImage:`url(${BackgroundImage})` }}>
-                <Image width={66*0.25*16} height={66*0.25*16} layout={"constrained"} src={Computer} alt="my image" className="rounded-3xl outline-2 outline-lightmain outline-offset-4 outline border-2 border-lightmain shadow-md object-contain  "/>
-
+                <Image width={66*0.25*16} height={66*0.25*16} layout={"constrained"} src={Computer} priority={true} alt="my image" className="rounded-3xl outline-2 outline-lightmain outline-offset-4 outline border-2 border-lightmain shadow-md object-contain  "/>
                 <div className=" sm:w-3/4 w-full bg-warmmain/30 p-4 rounded-xl  md:text-lg text-sm">
                     <motion.h3 initial='hidden' whileInView="reveal" transition={{staggerChildren:.02}} className="lg:text-3xl md:text-2xl capitalize text-lg  font-bold text-lightmain">{headerSplitted.map((h,i)=>(
                         <motion.span  transition={{duration:0.5}} key={i} variants={charVariants}>
